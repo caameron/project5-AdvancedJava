@@ -20,5 +20,16 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void pretty_print(View view)
+    {
+        Intent intent = new Intent(this, prettyPrint.class);
+        startActivity(intent);
+    }
+
+    public void search_appointment(View view)
+    {
+        Intent intent = new Intent(this, searchAppointment.class);
+        startActivity(intent);
+    }
 
 }

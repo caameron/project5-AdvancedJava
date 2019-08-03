@@ -42,6 +42,7 @@
         android:id="@+id/prettyPrintButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="pretty_print"
         android:text="@string/pretty_print_appointment_book"
         app:layout_constraintStart_toStartOf="@+id/appointmentButton"
         app:layout_constraintTop_toBottomOf="@+id/appointmentButton" />
@@ -49,6 +50,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="search_appointment"
         android:text="@string/search_for_appointments"
         app:layout_constraintStart_toStartOf="@+id/prettyPrintButton"
         app:layout_constraintTop_toBottomOf="@+id/prettyPrintButton" />

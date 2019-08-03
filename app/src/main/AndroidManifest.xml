@@ -10,10 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".prettyPrint"
+            android:label="prettyPrint" />
+        <activity
+            android:name=".searchAppointment"
+            android:label="searchAppointment" />
+        <activity
             android:name=".appointmentActivity"
             android:label="@string/title_activity_appointment"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
