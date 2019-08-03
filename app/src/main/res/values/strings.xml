@@ -9,4 +9,9 @@
     <string name="title_activity_search_appointment">search_appointment</string>
     <string name="search_appointments">Search For Appointments</string>
     <string name="print_appointments">Print Appointments</string>
+    <string name="owner">owner</string>
+    <string name="owner_of_book">Owner of Book</string>
+    <string name="description">description</string>
+    <string name="start_time">Start Time</string>
+    <string name="end_time">End Time</string>
 </resources>
