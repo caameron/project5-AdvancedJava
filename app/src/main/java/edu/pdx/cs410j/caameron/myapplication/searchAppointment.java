@@ -1,8 +1,11 @@
 package edu.pdx.cs410j.caameron.myapplication;
 
+import android.app.ActionBar;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
+import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -31,8 +34,8 @@ public class searchAppointment extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_search_appointment);
-
         submit = findViewById(R.id.submitSearch);
         startDate = findViewById(R.id.startDateSearch);
         endDate = findViewById(R.id.endDateSearch);
@@ -69,6 +72,7 @@ public class searchAppointment extends AppCompatActivity {
                                             //Found Book Print it
                                             ownerFound = true;
                                             bookToPrint = apptBook;
+                                            Log.v("Print", bookToPrint.getOwnerName() + "\n" + bookToPrint.getAppointments());
                                             break;
                                         }
                                     }

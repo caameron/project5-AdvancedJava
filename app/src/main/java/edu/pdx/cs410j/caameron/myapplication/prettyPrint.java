@@ -1,8 +1,11 @@
 package edu.pdx.cs410j.caameron.myapplication;
 
+import android.app.ActionBar;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
+import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -26,7 +29,9 @@ public class prettyPrint extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_pretty_print);
+
 
         submit = findViewById(R.id.submitPrettyPrint);
         owner = findViewById(R.id.ownerPrettyPrint);
@@ -61,6 +66,7 @@ public class prettyPrint extends AppCompatActivity {
                                             PrettyPrinter prettyPrinter = new PrettyPrinter();
                                             prettyPrinter.dump(apptBook);
                                             printArea.setText(prettyPrinter.getPrettyOutput());
+                                            Log.v("print", prettyPrinter.getPrettyOutput());
                                             ownerFound = true;
                                             break;
                                         }
