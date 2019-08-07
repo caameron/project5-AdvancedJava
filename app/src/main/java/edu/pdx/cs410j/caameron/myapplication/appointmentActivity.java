@@ -5,10 +5,13 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import org.w3c.dom.Text;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -40,8 +43,7 @@ public class appointmentActivity extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Log.v("print", submit.getText().toString() + owner.getText().toString());
-                        Appointment appt = null;
+                        Appointment appt;
                         try
                         {
 //                            FileInputStream fileI = new FileInputStream("appointmentsBooksSave.txt");
@@ -126,11 +128,10 @@ public class appointmentActivity extends AppCompatActivity {
                         {
                             Toast errMessage = Toast.makeText(getApplicationContext(), err.getMessage(), Toast.LENGTH_SHORT);
                             errMessage.show();
+                            return;
                         }
                         //Serialize Book and write to file
                         try {
-//                            FileOutputStream file = new FileOutputStream("appointmentsBooksSave.txt");
-
                             FileOutputStream file = new FileOutputStream(new File(getApplicationContext().getFilesDir(), "appointmentsBooks.txt"));
                             ObjectOutputStream oos = new ObjectOutputStream(file);
                             oos.writeObject(book);
@@ -141,7 +142,13 @@ public class appointmentActivity extends AppCompatActivity {
                         {
                             Toast errMessage = Toast.makeText(getApplicationContext(), err.getMessage(), Toast.LENGTH_SHORT);
                             errMessage.show();
+                            return;
                         }
+
+                        Toast success = Toast.makeText(getApplicationContext(), "Appointment Created", Toast.LENGTH_SHORT);
+                        success.show();
+                        TextView print = findViewById(R.id.printAppointment);
+                        print.setText(appt.toString());
                     }
                     }
 

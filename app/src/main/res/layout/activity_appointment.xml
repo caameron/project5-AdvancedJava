@@ -122,9 +122,19 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
-        android:text="Submit"
+        android:text="@string/submit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/endTimeInput" />
+
+    <TextView
+        android:id="@+id/printAppointment"
+        android:layout_width="370dp"
+        android:layout_height="98dp"
+        android:layout_marginTop="80dp"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="@+id/submitAppointment"
+        app:layout_constraintStart_toStartOf="@+id/endTime"
+        app:layout_constraintTop_toBottomOf="@+id/submitAppointment" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

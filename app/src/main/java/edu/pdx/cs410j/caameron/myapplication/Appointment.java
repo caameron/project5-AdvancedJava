@@ -84,6 +84,42 @@ public class Appointment extends AbstractAppointment implements Comparable<Appoi
     String regEx = "^[0-9]?[0-9]/[0-9]?[0-9]/([0-9]{4}) [0-1]?[0-9]:[0-6][0-9]$";
     Pattern pattern = Pattern.compile(regEx);
     Matcher matcher = pattern.matcher(startAppt);
+
+
+    String[] splitDate = startDate.split("/");
+    String[] splitTime = startTime.split(":");
+    String[] splitDateEnd = endDate.split("/");
+    String[] splitTimeEnd = endTime.split(":");
+    int year, month, date, hrs, min;
+    int yearEnd, monthEnd, dateEnd, hrsEnd, minEnd;
+    year = Integer.parseInt(splitDate[2]);
+    month = Integer.parseInt(splitDate[0]);
+    date = Integer.parseInt(splitDate[1]);
+    hrs = Integer.parseInt(splitTime[0]);
+    min = Integer.parseInt(splitTime[1]);
+    yearEnd = Integer.parseInt(splitDateEnd[2]);
+    monthEnd = Integer.parseInt(splitDateEnd[0]);
+    dateEnd = Integer.parseInt(splitDateEnd[1]);
+    hrsEnd = Integer.parseInt(splitTimeEnd[0]);
+    minEnd = Integer.parseInt(splitTimeEnd[1]);
+
+    if(month > 12 || monthEnd > 12)
+    {
+      throw new Exception("Month cannot be greater than 12");
+    }
+    if(date > 31 || dateEnd > 31)
+    {
+      throw new Exception("Days cannot be greater than 31");
+    }
+    if(hrs > 12 || hrsEnd > 12)
+    {
+      throw new Exception("Time format should be in hh:mm am/pm. Hours greater than 12 not allowed");
+    }
+    if(min > 59 || minEnd > 59)
+    {
+      throw new Exception("Minutes cannot be greater than 59");
+    }
+
     if( matcher.matches() == false)
     {
       throw new Exception("Date and Time format incorrect. Must be of format dd/mm/yyyy hh:mm");
@@ -108,14 +144,7 @@ public class Appointment extends AbstractAppointment implements Comparable<Appoi
 
     //Set date and time to Date objects
     //Convert to ints
-    String[] splitDate = startDate.split("/");
-    String[] splitTime = startTime.split(":");
-    int year, month, date, hrs, min;
-    year = Integer.parseInt(splitDate[2]);
-    month = Integer.parseInt(splitDate[0]);
-    date = Integer.parseInt(splitDate[1]);
-    hrs = Integer.parseInt(splitTime[0]);
-    min = Integer.parseInt(splitTime[1]);
+
     this.yearB = year;
     this.monthB = month;
     this.dayB = date;
@@ -148,8 +177,7 @@ public class Appointment extends AbstractAppointment implements Comparable<Appoi
       }
     }
 
-    String[] splitDateEnd = endDate.split("/");
-    String[] splitTimeEnd = endTime.split(":");
+
     year = Integer.parseInt(splitDateEnd[2]);
     month = Integer.parseInt(splitDateEnd[0]);
     date = Integer.parseInt(splitDateEnd[1]);
