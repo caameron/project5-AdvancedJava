@@ -15,7 +15,8 @@ import java.util.Collections;
  * and get the current appoints in the collection.
  * @param <T> Appointment Class
  */
-public class AppointmentBook<T extends Appointment> extends AbstractAppointmentBook {
+public class AppointmentBook<T extends Appointment> extends AbstractAppointmentBook implements Serializable {
+    private static final long serialVersionUID = 422L;
 
     //Data members for Appointmentbook class.
     //Owner of the book and the appointments collection

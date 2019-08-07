@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import edu.pdx.cs410J.AbstractAppointment;
 
 public class MainActivity extends AppCompatActivity {
 

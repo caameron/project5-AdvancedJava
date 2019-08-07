@@ -1,6 +1,8 @@
 package edu.pdx.cs410j.caameron.myapplication;
 
 import edu.pdx.cs410J.AbstractAppointment;
+
+import java.io.Serializable;
 import java.sql.CallableStatement;
 import java.text.DateFormat;
 import java.util.Calendar;
@@ -15,7 +17,8 @@ import java.lang.Comparable;
  * This class extends AbstractAppointment. All data members of the class are represented using Strings. For now
  * the class only sets all the data in the constructor and uses methods to get the values when needed.
  */
-public class Appointment extends AbstractAppointment implements Comparable<Appointment>{
+public class Appointment extends AbstractAppointment implements Comparable<Appointment>, Serializable {
+  private static final long serialVersionUID = 808L;
 
   //Data members for Appointment class, will have variables for
   //start, end and description
