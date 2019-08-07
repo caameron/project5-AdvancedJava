@@ -2,6 +2,7 @@ package edu.pdx.cs410j.caameron.myapplication;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.ActionProvider;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -38,12 +39,22 @@ public class appointmentActivity extends AppCompatActivity {
         descripion = findViewById(R.id.descriptionInput);
         start = findViewById(R.id.startTimeInput);
         end = findViewById(R.id.endTimeInput);
-
         submit.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         Appointment appt;
+                        try{
+                            FileOutputStream newF = new FileOutputStream(new File(getApplicationContext().getFilesDir(), "appointmentsBooks.txt"));
+                            ObjectOutputStream oos = new ObjectOutputStream(newF);
+                            oos.writeObject(book);
+                            oos.close();
+                            newF.close();
+                        }
+                        catch (Exception err)
+                        {
+                            Log.v("print", err.getMessage());
+                        }
                         try
                         {
 //                            FileInputStream fileI = new FileInputStream("appointmentsBooksSave.txt");
@@ -57,7 +68,7 @@ public class appointmentActivity extends AppCompatActivity {
                             {
                                 for(AppointmentBook<Appointment> b : book)
                                 {
-                                    Log.v("print", b.getAppointments().toString());
+                                    Log.v("printBooks", b.getAppointments().toString());
                                 }
                             }
 
@@ -65,7 +76,6 @@ public class appointmentActivity extends AppCompatActivity {
                             String endTime = end.getText().toString();
                             String desciptionAppt = descripion.getText().toString();
                             String ownerAppt = owner.getText().toString();
-                            Log.v("Print", beginTime);
 
                             String [] begSplit = beginTime.split(" ");
                             String [] endSplit = endTime.split(" ");
@@ -80,7 +90,6 @@ public class appointmentActivity extends AppCompatActivity {
                             String endT = endSplit[1];
                             String endTimeOfDay = endSplit[2];
                             appt = new Appointment(beginD, beginT, endD, endT, desciptionAppt, beginTimeOfDay, endTimeOfDay);
-                            Log.v("Print", appt.toString());
 
 
                             boolean ownerFound = false;
