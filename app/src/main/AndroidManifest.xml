@@ -11,10 +11,12 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".prettyPrint"
-            android:label="prettyPrint" />
+            android:label="prettyPrint"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".searchAppointment"
-            android:label="searchAppointment" />
+            android:label="searchAppointment"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".appointmentActivity"
             android:label="@string/title_activity_appointment"
