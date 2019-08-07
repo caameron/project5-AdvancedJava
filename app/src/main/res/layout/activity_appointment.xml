@@ -30,12 +30,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="60dp"
         android:text="@string/owner"
         android:textSize="26sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
 
     <EditText
         android:id="@+id/ownerInput"
@@ -135,6 +134,22 @@
         app:layout_constraintEnd_toEndOf="@+id/submitAppointment"
         app:layout_constraintStart_toStartOf="@+id/endTime"
         app:layout_constraintTop_toBottomOf="@+id/submitAppointment" />
+
+    <TextView
+        android:id="@+id/makeAppointmentDescription"
+        android:layout_width="384dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/makeAppointmentDescription"
+        app:layout_constraintBottom_toTopOf="@+id/owner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

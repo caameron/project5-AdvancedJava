@@ -24,5 +24,65 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
+    <TextView
+        android:id="@+id/searchDescription"
+        android:layout_width="383dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="@string/searchDescription"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayoutSearch" />
+
+    <EditText
+        android:id="@+id/startDateSearch"
+        android:layout_width="380dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/start_time"
+        app:layout_constraintStart_toStartOf="@+id/searchDescription"
+        app:layout_constraintTop_toBottomOf="@+id/searchDescription" />
+
+    <EditText
+        android:id="@+id/endDateSearch"
+        android:layout_width="380dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/end_time"
+        app:layout_constraintStart_toStartOf="@+id/searchDescription"
+        app:layout_constraintTop_toBottomOf="@+id/startDateSearch" />
+
+    <Button
+        android:id="@+id/submitSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/submit"
+        app:layout_constraintEnd_toEndOf="@+id/endDateSearch"
+        app:layout_constraintTop_toBottomOf="@+id/endDateSearch" />
+
+    <TextView
+        android:id="@+id/searchPrintArea"
+        android:layout_width="386dp"
+        android:layout_height="484dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:scrollbars="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/submitSearch" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
