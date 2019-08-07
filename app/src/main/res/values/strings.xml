@@ -9,13 +9,13 @@
     <string name="title_activity_search_appointment">search_appointment</string>
     <string name="search_appointments">Search For Appointments</string>
     <string name="print_appointments">Print Appointments</string>
-    <string name="owner">owner</string>
+    <string name="owner">Owner</string>
     <string name="owner_of_book">Owner of Book</string>
     <string name="description">description</string>
     <string name="start_time">Start Time</string>
     <string name="end_time">End Time</string>
     <string name="pretty_print_desc">Enter in the name of the owner of an appointment book to print out their appointments</string>
     <string name="submit">Submit</string>
-    <string name="searchDescription">Search for Appointments within a date range. Dates must be in the format of mm/dd/yyyy hh:mm am/pm</string>
+    <string name="searchDescription">Search Appointments for a specific owner within a date range. Dates must be in the format of mm/dd/yyyy hh:mm am/pm</string>
     <string name="makeAppointmentDescription">Enter in the fields below to create an Appointment. Start and End Time must be of the format mm/dd/yyyy hh:mm am/pm</string>
 </resources>

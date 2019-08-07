@@ -44,7 +44,7 @@
         android:layout_marginLeft="80dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/owner_of_book"
+        android:hint="@string/owner_of_book"
         app:layout_constraintStart_toEndOf="@+id/owner"
         app:layout_constraintTop_toTopOf="@+id/owner" />
 
@@ -66,7 +66,7 @@
         android:layout_marginLeft="80dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/description"
+        android:hint="@string/description"
         app:layout_constraintStart_toEndOf="@+id/owner"
         app:layout_constraintTop_toTopOf="@+id/description" />
 
@@ -88,7 +88,7 @@
         android:layout_marginLeft="80dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/start_time"
+        android:hint="@string/start_time"
         app:layout_constraintStart_toEndOf="@+id/owner"
         app:layout_constraintTop_toTopOf="@+id/startTime" />
 
@@ -110,7 +110,7 @@
         android:layout_marginLeft="80dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/end_time"
+        android:hint="@string/end_time"
         app:layout_constraintStart_toEndOf="@+id/owner"
         app:layout_constraintTop_toTopOf="@+id/endTime" />
 

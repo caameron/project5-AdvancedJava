@@ -68,7 +68,7 @@ public class appointmentActivity extends AppCompatActivity {
                             Log.v("Print", beginTime);
 
                             String [] begSplit = beginTime.split(" ");
-                            String [] endSplit = beginTime.split(" ");
+                            String [] endSplit = endTime.split(" ");
                             if(begSplit.length != 3 || endSplit.length != 3)
                             {
                                 throw new Exception("Date formatted incorrectly must be of the form mm/dd/yyyy hh:mm am/pm");
