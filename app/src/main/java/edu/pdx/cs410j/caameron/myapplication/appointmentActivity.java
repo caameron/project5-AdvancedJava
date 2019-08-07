@@ -44,16 +44,26 @@ public class appointmentActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         Appointment appt;
-                        try{
-                            FileOutputStream newF = new FileOutputStream(new File(getApplicationContext().getFilesDir(), "appointmentsBooks.txt"));
-                            ObjectOutputStream oos = new ObjectOutputStream(newF);
-                            oos.writeObject(book);
-                            oos.close();
-                            newF.close();
-                        }
-                        catch (Exception err)
-                        {
-                            Log.v("print", err.getMessage());
+                        if(book.isEmpty()) {
+                            try {
+                                FileInputStream fileI = new FileInputStream(new File(getApplicationContext().getFilesDir(), "appointmentsBooks.txt"));
+                                ObjectInputStream ois = new ObjectInputStream(fileI);
+                                book = (ArrayList<AppointmentBook<Appointment>>)ois.readObject();
+                                ois.close();
+                                fileI.close();
+                            } catch (Exception err) {
+                                try {
+                                    FileOutputStream newF = new FileOutputStream(new File(getApplicationContext().getFilesDir(), "appointmentsBooks.txt"));
+                                    ObjectOutputStream oos = new ObjectOutputStream(newF);
+                                    oos.writeObject(book);
+                                    oos.close();
+                                    newF.close();
+                                }
+                                catch (Exception err2)
+                                {
+                                    Log.v("ERRR", err2.getMessage());
+                                }
+                            }
                         }
                         try
                         {
