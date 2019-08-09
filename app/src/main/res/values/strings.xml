@@ -20,4 +20,5 @@
     <string name="makeAppointmentDescription">Enter in the fields below to create an Appointment. Start and End Time must be of the format mm/dd/yyyy hh:mm am/pm</string>
     <string name="help">Help</string>
     <string name="readme">README</string>
+    <string name="back">Back</string>
 </resources>

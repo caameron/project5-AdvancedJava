@@ -1,5 +1,6 @@
 package edu.pdx.cs410j.caameron.myapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.ActionProvider;
@@ -27,6 +28,12 @@ public class appointmentActivity extends AppCompatActivity {
     Button submit;
     EditText owner, descripion, start, end;
     private ArrayList<AppointmentBook<Appointment>> book = new ArrayList<>();
+
+    public void backToMain(View view)
+    {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
