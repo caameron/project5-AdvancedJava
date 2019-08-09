@@ -18,6 +18,10 @@
             android:label="searchAppointment"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
+            android:name=".readme"
+            android:label="readme"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".appointmentActivity"
             android:label="@string/title_activity_appointment"
             android:theme="@style/AppTheme.NoActionBar" />

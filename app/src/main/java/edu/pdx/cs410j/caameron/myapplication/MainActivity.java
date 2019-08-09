@@ -28,7 +28,8 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId())
         {
             case R.id.menuHelp:
-                Log.v("PRINTHELP", "HELP");
+                Intent launch = new Intent(MainActivity.this, readme.class);
+                startActivityForResult(launch, 0);
                 return true;
                 default:
                     return super.onOptionsItemSelected(item);
@@ -39,6 +40,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
+
+    public void readMe(View view)
+    {
+        Intent intent = new Intent(this, readme.class);
+        startActivity(intent);
     }
 
     public void make_appointment(View view)

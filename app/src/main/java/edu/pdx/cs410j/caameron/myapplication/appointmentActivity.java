@@ -27,6 +27,7 @@ public class appointmentActivity extends AppCompatActivity {
     Button submit;
     EditText owner, descripion, start, end;
     private ArrayList<AppointmentBook<Appointment>> book = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
