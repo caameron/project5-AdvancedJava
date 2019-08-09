@@ -17,20 +17,18 @@ public class readme extends AppCompatActivity {
         content = findViewById(R.id.readMeText);
 
 
-        String about = "Caameron Nakasone\nAdvanced Programming in Java\nProject 4: A REST-ful Appointment Book Web Service\n" +
-                "Project 4 will take in arguments from the command line to create an Appointment Book and an Appointment\n" +
-                "that will be automatically added to the created Appointment Book. The arguments include the name of the owner for the\n" +
-                "appointment book and details about the appointment which will be added (description, start date/time and end date/time\n" +
-                "There are now host and port options which can specify a host and port for the project to make get and post requests to the server\n" +
-                "The server code is in the AppointmentBookServlet.java file and will allow you to create appointments and appointment books on the server\n" +
-                "You can then get all the appointments that will be formatted using PrettyPrinter, and there will also be an option to search for\n" +
-                "specific appointments within a time period\n" +
-                "To create an appointment on the server the arguments are the same. However to get all appointments of a certain book only the owner\n" +
-                "is needed and to search only the owner of the book and the start and end dates are needed.\n" +
-                "There are also README and print options which you may choose to invoke. The README brings up this message and the print\n" +
-                "option will print the appointment that has just been added to the standard output. No fields can be empty from the command\n" +
-                "line and the dates and times must be formatted correctly for the program to run. If you have entered in something\n" +
-                "incorrectly an error message will be printed out and the program will exit.\n";
+        String about = "Caameron Nakasone\nAdvanced Programming in Java\nProject 5: A Small Device Application for an Appointment Book\n\n" +
+                "Project 5 is an application written using Android Studio. It is a small android application which provides the functionality" +
+                "of the previous projects. This includes creating appointments and multiple appointment books, searching, and printing the contents " +
+                "of the book. The way to create appointments/appointment books, searching, and printing are the same as well. To create an appointments " +
+                "you will need to provide owner, date, decsription, begin time and end time. Searching will just require an owner, begin time, and end time and " +
+                "printing will only need an owner. These fields will be Edit Texts on the screen for you to input your data.\n\n" +
+                "The application will start on the home page with three different buttons which correspond to the functionality above. Each one will take you to" +
+                " a different screen with the corresponding edit texts. There will also be a submit button that needs to be pressed when you are" +
+                " done entering in information. Error messages will come up in the form of toasts and let you know what is wrong" +
+                ". Lastly on the home screen there will be a menu icon (top right) which contains a README option. This will take you " +
+                "the README screen and display this page";
+
         content.setText(about);
     }
 }
