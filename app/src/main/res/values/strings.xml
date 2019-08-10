@@ -2,7 +2,7 @@
     <string name="app_name">My Application</string>
     <string name="title_activity_appointment">appointmentActivity</string>
     <string name="appointment_application_android">Appointment Application Android</string>
-    <string name="pretty_print_appointment_book">Pretty Print Appointment Book</string>
+    <string name="pretty_print_appointment_book">Print Appointment Book</string>
     <string name="search_for_appointments">Search for Appointments</string>
     <string name="make_appointment">Make Appointment</string>
     <string name="title_activity_pretty_print">pretty_print</string>

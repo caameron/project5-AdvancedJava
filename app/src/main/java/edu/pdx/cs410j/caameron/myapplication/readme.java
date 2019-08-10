@@ -1,15 +1,34 @@
 package edu.pdx.cs410j.caameron.myapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+/**
+ * readme class that will handle the README activity/page.
+ */
 public class readme extends AppCompatActivity {
     TextView content;
 
+    /**
+     * Gets the intent for the main page of the application and starts it. Used for the back button on the screen
+     * @param view
+     */
+    public void backToMain(View view)
+    {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
 
+    /**
+     * Sets up the screen when created. The README page only contains a text view with the contents of the README, which gets set
+     * in this method.
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

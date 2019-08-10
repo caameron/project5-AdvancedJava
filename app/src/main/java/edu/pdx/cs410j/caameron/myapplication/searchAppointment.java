@@ -1,6 +1,7 @@
 package edu.pdx.cs410j.caameron.myapplication;
 
 import android.app.ActionBar;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
@@ -23,6 +24,10 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
+/**
+ * Class for the search Appointment screen. This class will allow the user to search for specific appointments
+ * given a owner name, start date, and end date
+ */
 public class searchAppointment extends AppCompatActivity {
 
     Button submit;
@@ -30,6 +35,22 @@ public class searchAppointment extends AppCompatActivity {
     TextView printArea;
     private ArrayList<AppointmentBook<Appointment>> book = new ArrayList<>();
 
+    /**
+     * Gets the intent for the main page of the application and starts it. Used for the back button on the screen
+     * @param view
+     */
+    public void backToMain(View view)
+    {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    /**
+     * Sets the view of the screen upon creation. In addition will set an onClick Listener to the submit button
+     * on the screen. This listener will handle obtaining the values from the all the fields on the screen
+     * and using them to search for appointments within a start and end date.
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {

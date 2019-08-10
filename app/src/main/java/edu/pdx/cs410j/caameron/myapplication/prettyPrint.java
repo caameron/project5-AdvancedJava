@@ -1,6 +1,7 @@
 package edu.pdx.cs410j.caameron.myapplication;
 
 import android.app.ActionBar;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
@@ -18,6 +19,9 @@ import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 import java.util.ArrayList;
 
+/**
+ * Class which will handle the creation and methods on the print appointment books screen.
+ */
 public class prettyPrint extends AppCompatActivity {
 
     Button submit;
@@ -25,6 +29,22 @@ public class prettyPrint extends AppCompatActivity {
     TextView printArea;
     private ArrayList<AppointmentBook<Appointment>> book = new ArrayList<>();
 
+    /**
+     * Gets the intent for the main page of the application and starts it. Used for the back button on the screen
+     * @param view
+     */
+    public void backToMain(View view)
+    {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    /**
+     * Method that sets the view for the screen and sets the submit button to a onClick Listerner
+     *  that uses the PrettyPrinter.java class to print the contents of an Appointment book
+     *  by the owners name
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {

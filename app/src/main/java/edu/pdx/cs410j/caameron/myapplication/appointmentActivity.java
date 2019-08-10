@@ -22,19 +22,31 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
-
+/**
+ * Class to handle making appointments for the application.
+ */
 public class appointmentActivity extends AppCompatActivity {
 
     Button submit;
     EditText owner, descripion, start, end;
     private ArrayList<AppointmentBook<Appointment>> book = new ArrayList<>();
 
+    /**
+     * Gets the intent for the main page of the application and starts it. Used for the back button on the screen
+     * @param view
+     */
     public void backToMain(View view)
     {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 
+    /**
+     * Sets the screen for Making Appointments upon creation. Sets a onClick listener to the submit button which will
+     * handle the creation of and Appointment book. It will take the values from all the fields on the screen and
+     * use it to create and Appointment using the Appointment.java and AppointmentBook.java classes
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
