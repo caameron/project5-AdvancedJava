@@ -16,7 +16,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 /**
@@ -62,6 +64,27 @@ public class prettyPrint extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+
+                        try {
+                            FileInputStream fileI = new FileInputStream(new File(getApplicationContext().getFilesDir(), "appointmentsBooks.txt"));
+                            ObjectInputStream ois = new ObjectInputStream(fileI);
+                            book = (ArrayList<AppointmentBook<Appointment>>)ois.readObject();
+                            ois.close();
+                            fileI.close();
+                        } catch (Exception err) {
+                            try {
+                                FileOutputStream newF = new FileOutputStream(new File(getApplicationContext().getFilesDir(), "appointmentsBooks.txt"));
+                                ObjectOutputStream oos = new ObjectOutputStream(newF);
+                                oos.writeObject(book);
+                                oos.close();
+                                newF.close();
+                            }
+                            catch (Exception err2)
+                            {
+                                Log.v("ERRR", err2.getMessage());
+                            }
+                        }
+
                         try {
                             FileInputStream fileI = new FileInputStream(new File(getApplicationContext().getFilesDir(), "appointmentsBooks.txt"));
                             ObjectInputStream ois = new ObjectInputStream(fileI);
